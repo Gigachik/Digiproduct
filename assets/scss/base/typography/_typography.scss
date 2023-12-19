@@ -1,0 +1,160 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: $poppins;
+    line-height: 1.2;
+    font-weight: 500;
+    letter-spacing: -1px;
+    margin-bottom: 15px;
+    a {
+        font-weight: inherit;
+        font-size: inherit;
+        line-height: inherit;
+    }
+    strong {
+        color: $secondary;
+    }
+}
+
+h1 {
+    font-size: 60px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+h2.title,
+h1.title {
+    margin-bottom: 40px;
+}
+h2,
+h3 {
+    font-size: 30px;
+    font-weight: 600;
+}
+h4 {
+    font-size: 22px;
+}
+h5 {
+    font-size: 20px;
+}
+h6 {
+    font-size: 18px;
+}
+a {
+    font-size: 14px;
+    line-height: 26px;
+    color: $grey;
+}
+.text p,
+p,
+.text {
+    font-size: 14px;
+    line-height: 26px;
+    &:not(:last-child) {
+        margin-bottom: 15px;
+    }
+    a {
+        font-weight: inherit;
+        font-size: inherit;
+        line-height: inherit;
+    }
+}
+.text {
+    &:not(:last-child) {
+        margin-bottom: 0;
+    }
+    strong {
+        color: $secondary;
+    }
+    ul,
+    ol {
+        margin-bottom: 15px;
+        li {
+            position: relative;
+            padding-left: 30px;
+            font-size: 16px;
+            color: $black;
+            margin-bottom: 10px;
+            &::before {
+                position: absolute;
+                content: "";
+                top: 4px;
+                left: 0;
+                width: 15px;
+                height: 15px;
+                background: center / contain url("../svg/check.svg") no-repeat;
+            }
+        }
+    }
+    ol {
+        li {
+            &::before {
+                content: "";
+                top: 8px;
+                left: 5px;
+                width: 6px;
+                height: 6px;
+                border-radius: 50%;
+                background: none;
+                background: $grey;
+            }
+        }
+    }
+}
+.fw-400 {
+    font-weight: 400;
+}
+.fw-bold {
+    font-weight: bold;
+}
+
+@media (max-width: 991px) {
+    h1 {
+        font-size: 44px;
+    }
+    h2.title,
+    h1.title {
+        margin-bottom: 30px;
+    }
+    h2,
+    h3 {
+        font-size: 26px;
+    }
+    h4 {
+        font-size: 24px;
+    }
+    h5 {
+        font-size: 18px;
+    }
+    h6 {
+        font-size: 16px;
+    }
+    a {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 767px) {
+    h1 {
+        font-size: 28px;
+    }
+    h2.title,
+    h1.title {
+        margin-bottom: 20px;
+    }
+    h2,
+    h3 {
+        font-size: 22px;
+    }
+    h4 {
+        font-size: 20px;
+    }
+    h5 {
+        font-size: 16px;
+    }
+    h6 {
+        font-size: 14px;
+    }
+}

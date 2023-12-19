@@ -1,0 +1,63 @@
+form {
+    .btn {
+        background: $secondary;
+        color: $white;
+        border: 0;
+        &:hover {
+            background: $white;
+            color: $secondary;
+        }
+    }
+    input,
+    textarea {
+        outline: none;
+        border: 0;
+        padding: 14px 20px;
+        display: block;
+        font-size: 16px;
+        width: 100%;
+        border: 1px solid $border;
+        color: $black;
+        background: $white;
+        transition: $transition;
+        &:active,
+        &:focus {
+            border-color: $secondary;
+        }
+    }
+    textarea {
+        resize: vertical;
+        min-height: 120px;
+        max-height: 210px;
+        width: 100%;
+    }
+}
+.form {
+    form {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        span {
+            width: calc(50% - 10px);
+            &[data-name="textarea-415"] {
+                width: 100%;
+            }
+            &.wpcf7-spinner {
+                display: none;
+            }
+            &.wpcf7-not-valid-tip {
+                width: 100%;
+                font-size: 14px;
+                margin-top: 5px;
+            }
+        }
+        .btn {
+            width: auto;
+            margin-left: auto;
+            &:hover {
+                background: $black;
+                color: $white;
+            }
+        }
+    }
+}

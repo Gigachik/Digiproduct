@@ -1,0 +1,67 @@
+.swiper {
+    &_btns {
+        position: absolute;
+        z-index: 3;
+        bottom: 10px;
+        left: 0;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .swiper-button-prev,
+        .swiper-button-next {
+            position: relative;
+            top: initial;
+            left: initial;
+            right: initial;
+            bottom: initial;
+            height: 30px;
+            margin: 0;
+            &::after {
+                content: "";
+                background: center / contain url("../svg/arrow-1.svg") no-repeat;
+                width: 18px;
+                height: 22px;
+                filter: grayscale(1);
+                transition: $transition;
+            }
+            &:hover {
+                &::after {
+                    filter: grayscale(0);
+                }
+            }
+        }
+        .swiper-button-next {
+            transform: scale(-1, -1);
+        }
+        .autoplay_progress {
+            position: relative;
+            width: 100%;
+            margin: 0 15px;
+            height: 3px;
+            background: $lightBlack;
+            overflow: hidden;
+        }
+
+        .progress {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 3px;
+            background-color: $secondary;
+            animation-name: progress;
+            animation-duration: 5s;
+            animation-timing-function: linear;
+            animation-iteration-count: 1;
+        }
+
+        @keyframes progress {
+            from {
+                width: 0%;
+            }
+            to {
+                width: 100%;
+            }
+        }
+    }
+}

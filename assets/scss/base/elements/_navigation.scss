@@ -1,0 +1,193 @@
+.nav {
+    ul {
+        display: flex;
+        align-items: center;
+        gap: 65px;
+        li {
+            &.current-menu-item a {
+                color: $secondary;
+            }
+            &.header_image {
+                a {
+                    padding: 0;
+                }
+            }
+            a {
+                display: table;
+                font-weight: bold;
+                padding: 22px;
+                font-size: 16px;
+                color: $black;
+                text-transform: uppercase;
+                transition: $transition;
+                &:hover {
+                    color: $secondary;
+                }
+            }
+            img {
+                max-width: 190px;
+            }
+        }
+    }
+}
+.navigation {
+    display: flex;
+    align-items: center;
+    &_bottom {
+        display: none;
+        .phone {
+            color: $white;
+        }
+        &-phone {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            gap: 10px;
+            img,
+            svg {
+                width: 15px;
+                path {
+                    fill: $white;
+                }
+            }
+        }
+        .footer_socials {
+            width: auto;
+            margin-top: 0;
+        }
+    }
+}
+.burger {
+    cursor: pointer;
+    outline: none;
+    border: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: $black;
+    margin-left: auto;
+    box-shadow: $shadow;
+    position: relative;
+    z-index: 12;
+    &_item {
+        position: relative;
+        width: 25px;
+        height: 2px;
+        background: $lightBlack;
+        transition: $transition;
+        &::before,
+        &::after {
+            position: absolute;
+            content: "";
+            width: 100%;
+            height: 100%;
+            background: $lightBlack;
+            top: -8px;
+            left: 0;
+            transition: $transition;
+        }
+        &::after {
+            top: initial;
+            bottom: -8px;
+        }
+    }
+    &.active {
+        .burger_item {
+            background: transparent;
+            &::before {
+                top: 0;
+                transform: rotate(45deg);
+            }
+            &::after {
+                bottom: 0;
+                transform: rotate(-45deg);
+            }
+        }
+    }
+}
+@media (max-width: 1260px) {
+    .nav {
+        padding-left: 0;
+        ul {
+            li {
+                a {
+                    padding: 16px;
+                    font-size: 14px;
+                }
+                &.header_image {
+                    img {
+                        max-width: 140px;
+                    }
+                }
+            }
+        }
+    }
+}
+@media (max-width: 991px) {
+    .burger {
+        display: flex;
+        position: fixed;
+        right: 15px;
+    }
+
+    .navigation {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        width: 400px;
+        background: $black;
+        padding: 70px 30px 30px;
+        overflow: auto;
+        transform: translateX(110%);
+        transition: $transition;
+        z-index: 11;
+        &.active {
+            transform: translateX(0);
+        }
+        &_bottom {
+            display: block;
+            margin-top: auto;
+        }
+    }
+    .nav {
+        margin-bottom: 30px;
+        ul {
+            display: block;
+            li {
+                margin-bottom: 5px;
+                a {
+                    font-size: 22px;
+                    padding: 10px 0;
+                    color: $white;
+                    font-weight: 700;
+                    padding-left: 0;
+                }
+                &.header_image {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+@media (max-width: 520px) {
+    .navigation {
+        padding: 70px 15px 15px;
+        width: 200px;
+    }
+    .nav {
+        ul {
+            li {
+                a {
+                    font-size: 16px;
+                    padding: 10px 0;
+                }
+            }
+        }
+    }
+}

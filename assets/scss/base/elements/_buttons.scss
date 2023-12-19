@@ -1,0 +1,63 @@
+.btn {
+    cursor: pointer;
+    outline: none;
+    text-transform: capitalize;
+    display: table;
+    color: $black;
+    font-size: 16px;
+    font-weight: 700;
+    padding: 14px 30px;
+    border: 1px solid $grey;
+    transition: $transition;
+    &:hover {
+        background: $black;
+        color: $white;
+    }
+    &.white {
+        color: $white;
+        border: 1px solid $white;
+        &:hover {
+            background: $white;
+            color: $secondary;
+        }
+    }
+}
+.link {
+    display: table;
+    font-size: 14px;
+    margin-top: 20px;
+    font-weight: 500;
+    color: $secondary;
+    transition: $transition;
+    text-transform: capitalize;
+    &:hover {
+        filter: brightness(80%);
+    }
+}
+.arrow {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: $white;
+    transition: $transition;
+    svg path {
+        transition: $transition;
+    }
+    &:hover {
+        background: $secondary;
+        svg path {
+            fill: $white;
+        }
+    }
+}
+@media (max-width: 767px) {
+    .btn {
+        font-size: 14px;
+        padding: 12px 24px;
+    }
+}
