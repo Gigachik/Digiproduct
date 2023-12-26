@@ -20,9 +20,15 @@ form {
         color: $black;
         background: $white;
         transition: $transition;
+        margin-bottom: 20px;
         &:active,
         &:focus {
             border-color: $secondary;
+        }
+        &[type="submit"] {
+            cursor: pointer;
+            background: $black;
+            color: $white;
         }
     }
     textarea {
